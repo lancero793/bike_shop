@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% block tittle %} Moto FreeStyle || Rueda Libre {% endblock %}
+{% load static %}
+
+{% block infoProduc %}
+	<!-- //banner-2 -->
+	<!-- page -->
+	<div class="services-breadcrumb">
+		<div class="agile_inner_breadcrumb">
+			<div class="container">
+				<ul class="w3_short">
+					<li>
+						<a href="index.html">Inicio</a>
+						<i>|</i>
+					</li>
+					<li>Moto Freestyle</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- //page -->
+
+	<!-- Single Page -->
+	<div class="banner-bootom-w3-agileits py-5">
+		<div class="container py-xl-4 py-lg-2">
+			<!-- tittle heading -->
+			<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
+				<span>M</span>oto
+				<span>F</span>reestyle
+			</h3>
+			<!-- //tittle heading -->
+			<div class="row">
+				<div class="col-lg-5 col-md-8 single-right-left ">
+					<div class="grid images_3_of_2">
+						<div class="flexslider">
+							<ul class="slides">
+								<li data-thumb="images/si1.jpg">
+									<div class="thumb-image">
+										<img src="images/si1.jpg" data-imagezoom="true" class="img-fluid" alt=""> </div>
+								</li>
+								<li data-thumb="images/si2.jpg">
+									<div class="thumb-image">
+										<img src="images/si2.jpg" data-imagezoom="true" class="img-fluid" alt=""> </div>
+								</li>
+								<li data-thumb="images/si3.jpg">
+									<div class="thumb-image">
+										<img src="images/si3.jpg" data-imagezoom="true" class="img-fluid" alt=""> </div>
+								</li>
+							</ul>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-7 single-right-left simpleCart_shelfItem">
+					<h3 class="mb-3">Moto Freestyle (Recargable)</h3>
+					<p class="mb-3">
+						<span class="item_price">$360.000</span>
+						<del class="mx-2 font-weight-light">$450.000</del>
+						<label>Envio Gratis</label>
+					</p>
+					<div class="single-infoagile">
+						<ul>
+							<li class="mb-3">
+								Elegible para pago contraentrega.
+							</li>
+							<li class="mb-3">
+								Entrega Rapida.
+							</li>
+							<li class="mb-3">
+								Envios a nivel nacional.
+							</li>
+						</ul>
+					</div>
+					<div class="product-single-w3l">
+						<p class="my-3">
+							<i class="far fa-hand-point-right mr-2"></i>
+							<label>(3 Meses)</label>Garantia Bateria + Cargador</p>
+						<ul>
+							<li class="mb-1">
+								Bateria | 6V | 7AH
+							</li>
+							<li class="mb-1">
+								Luz Frontal
+							</li>
+							<li class="mb-1">
+								Caja Musical
+							</li>
+							<li class="mb-1">
+								Bateria | 1500 mAh
+							</li>
+							<!-- <li class="mb-1">
+								Exynos 7870 Octa Core 1.6GHz Processor
+							</li> -->
+						</ul>
+						<p class="my-sm-4 my-3">
+							<i class="fas fa-retweet mr-3"></i>Compra sin salir de casa.
+						</p>
+					</div>
+					<div class="occasion-cart">
+						<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
+							<form action="#" method="post">
+								<fieldset>
+									<input type="hidden" name="cmd" value="_cart" />
+									<input type="hidden" name="add" value="1" />
+									<input type="hidden" name="business" value=" " />
+									<input type="hidden" name="item_name" value="Moto Freestyle" />
+									<input type="hidden" name="amount" value="360000" />
+									<input type="hidden" name="discount_amount" value="0" />
+									<input type="hidden" name="currency_code" value="COP" />
+									<input type="hidden" name="return" value=" " />
+									<input type="hidden" name="cancel_return" value=" " />
+									<input type="submit" name="submit" value="Añadir al carrito" class="button" />
+								</fieldset>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //Single Page -->
+{% endblock %}
