@@ -16,7 +16,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- Meta tag Keywords -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8" />
-	<meta name="keywords" content="Electro Store Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"
+	<meta name="keywords" content="Bike shop, mtb, ruta, ciclismo, biking, gravel"
 	/>
 	<script>
 		addEventListener("load", function () {
@@ -32,13 +32,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- Custom-Files -->
 	<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
 	<!-- Bootstrap css -->
-	<link href="{% static 'css/style.css'%}" rel="stylesheet" type="text/css" media="all" />
+ <link href="{% static 'css/style.css'%}" rel="stylesheet" type="text/css" media="all" />
 	<!-- Main css -->
-	<link rel="stylesheet" href="{% static 'css/fontawesome-all.css'%}">
+	<link rel="stylesheet" href="{% static 'css/fontawesome-all.css' %}">
 	<!-- Font-Awesome-Icons-CSS -->
-	<link href="{% static 'css/popuo-box.css'%}" rel="stylesheet" type="text/css" media="all" />
+	<link href="{% static 'css/popuo-box.css' %}" rel="stylesheet" type="text/css" media="all" />
 	<!-- pop-up-box -->
-	<link href="css/menu.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="{% static 'css/menu.css' %}" rel="stylesheet" type="text/css" media="all" />
 	<!-- menu style -->
 	<!-- //Custom-Files -->
 
@@ -49,7 +49,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- //web fonts -->
 
 	<!-- favicon -->
-	<link rel="shortcut icon" href="images/logo2.png" type="image.png">
+	<link rel="shortcut icon" href="{% static 'images/logo2.png' %}" type="image.png">
 	<!-- // favicon -->
 </head>
 
@@ -59,7 +59,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container-fluid">
 			<div class="row main-top-w3l py-2">
 				<div class="col-lg-4 header-most-top">
-					<p class="text-white text-lg-left text-center">Ofertas y descuentos
+					<p class="text-white text-lg-left text-center">Promociones exclusivas
 						<i class="fas fa-shopping-cart ml-1"></i>
 					</p>
 				</div>
@@ -68,14 +68,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<ul>
 						<li class="text-center border-right text-white">
 							<a class="play-icon popup-with-zoom-anim text-white" href="#small-dialog1">
-								<i class="fas fa-map-marker mr-2"></i>Elegir ubicación</a>
+								<i class="fas fa-newspaper mr-2"></i>Catálogo</a>
 						</li>
 						<li class="text-center border-right text-white">
 							<a href="#" data-toggle="modal" data-target="#exampleModal" class="text-white">
 								<i class="fas fa-truck mr-2"></i>Seguir pedido</a>
 						</li>
 						<li class="text-center border-right text-white">
-							<i class="fas fa-phone mr-2"></i>(+57) 3043704505
+							<i class="fas fa-phone mr-2"></i>(+57) 3045703682
 						</li>
 						<li class="text-center border-right text-white">
 							<a href="#" data-toggle="modal" data-target="#exampleModal" class="text-white">
@@ -83,7 +83,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</li>
 						<li class="text-center text-white">
 							<a href="#" data-toggle="modal" data-target="#exampleModal2" class="text-white">
-								<i class="fas fa-sign-out-alt mr-2"></i>Registrarse </a>
+								<i class="fas fa-user-plus mr-2"></i>Registrarse </a>
 						</li>
 					</ul>
 					<!-- //header lists -->
@@ -562,7 +562,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<!-- logo -->
 				<div class="col-md-3 logo_agile">
 					<h1 class="text-center">
-						<a href="index.html" class="font-weight-bold font-italic">Rueda Libre</a>
+						<a href="{% url 'home' %}" class="font-weight-bold font-italic">Rueda Libre</a>
 					</h1>
 				</div>
 				<!-- //logo -->
@@ -700,81 +700,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</div>
 							</div>
 						</li>
-						<li class="nav-item dropdown mr-lg-2 mb-lg-0 mb-2">
-							<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Jugueteria
-							</a>
-							<div class="dropdown-menu">
-								<div class="agile_inner_drop_nav_info p-4">
-									<h5 class="mb-3">Carros</h5>
-									<div class="row">
-										<div class="col-sm-6 multi-gd-img">
-											<ul class="multi-column-dropdown">
-												<li>
-													<a href="product2.html">Ford Ranger</a>
-												</li>
-												<li>
-													<a href="product2.html">Ford Monster</a>
-												</li>
-												<li>
-													<a href="product2.html">Carro Policia</a>
-												</li>
-												<li>
-													<a href="product2.html">Masserati</a>
-												</li>
-												<li>
-													<a href="product2.html">Buggie</a>
-												</li>
-												<li>
-													<a href="product2.html">Jeep</a>
-												</li>
-												<li>
-													<a href="product2.html">Mercedes Benz</a>
-												</li>
-												<!-- <li>
-													<a href="product2.html"></a>
-												</li>
-												<li>
-													<a href="product2.html">Camera Accessories</a>
-												</li> -->
-											</ul>
-										</div>
-										<div class="col-sm-6 multi-gd-img">
-											<ul class="multi-column-dropdown">
-												<h5 class="mb-3">MOTOS</h5>
-												<li>
-													<a href="product2.html">Cuatrimoto (Control)</a>
-												</li>
-												<li>
-													<a href="product2.html">Cuatrimoto (Sin Control)</a>
-												</li>
-												<li>
-													<a href="product2.html">Ducatti</a>
-												</li>
-												<li>
-													<a href="product2.html">Tipo Policia</a>
-												</li>
-												<li>
-													<a href="product2.html">Moto (Control)</a>
-												</li>
-												<li>
-													<a href="product2.html">Ver Todo</a>
-												</li>
-												<!-- <li>
-													<a href="product2.html">Kitchen & Home Appliances</a>
-												</li>
-												<li>
-													<a href="product2.html">Heating & Cooling Appliances</a>
-												</li>
-												<li>
-													<a href="product2.html">All Appliances</a>
-												</li> -->
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-						</li>
 						<li class="nav-item mr-lg-2 mb-lg-0 mb-2">
 							<a class="nav-link" href="{% url 'nosotros' %}">Sobre Nosotros</a>
 						</li>
@@ -819,10 +744,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="w3l-space-banner">
 						<div class="carousel-caption p-lg-5 p-sm-4 p-3">
 							<p>DESCUENTO
-								<span>10%</span> TODA LA TIENDA</p>
-							<h3 class="font-weight-bold pt-2 pb-lg-5 pb-4">SOLO
-								<span>POR</span>
-								HOY
+								<span>5%</span> Todos los</p>
+							<h3 class="font-weight-bold pt-2 pb-lg-5 pb-4">Pedidos
+								<span>TIENDA</span>
+								ONLINE
 							</h3>
 							<a class="button2" href="product.html">Comprar Ahora </a>
 						</div>
@@ -833,10 +758,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="container">
 					<div class="w3l-space-banner">
 						<div class="carousel-caption p-lg-5 p-sm-4 p-3">
-							<p>Lo Mejor en
-								<span>Jugueteria</span></p>
-							<h3 class="font-weight-bold pt-2 pb-lg-5 pb-4">Para 
-								<span>Niñas y Niños</span>
+							<p>Lo que buscas
+								<span>Lo consigues</span> en
+              </p>
+							<h3 class="font-weight-bold pt-2 pb-lg-5 pb-4">#Rueda
+								<span>Libre</span>
 							</h3>
 							<a class="button2" href="product.html">Comprar Ahora </a>
 						</div>
@@ -848,7 +774,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="w3l-space-banner">
 						<div class="carousel-caption p-lg-5 p-sm-4 p-3">
 							<p>Paga
-								<span>Cuando recibas</span> solo</p>
+								<span>Cuando recibas</span> Disponible</p>
 							<h3 class="font-weight-bold pt-2 pb-lg-5 pb-4">En
 								<span>(Bogotá)</span>
 							</h3>
@@ -861,10 +787,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="container">
 					<div class="w3l-space-banner">
 						<div class="carousel-caption p-lg-5 p-sm-4 p-3">
-							<p>Los 
-								<span></span> Mejores</p>
-							<h3 class="font-weight-bold pt-2 pb-lg-5 pb-4">Equipos de
-								<span>Gimnasia</span>
+							<p>Nos apasiona el
+								<span>Ciclismo</span> </p>
+							<h3 class="font-weight-bold pt-2 pb-lg-5 pb-4">Tanto 
+								<span>Como a ti.</span>
 							</h3>
 							<a class="button2" href="{% url 'products' %}">Comprar Ahora </a>
 						</div>
@@ -894,9 +820,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<!-- footer first section -->
 				<h2 class="footer-top-head-w3l font-weight-bold mb-2">Rueda Libre :</h2>
 				<p class="footer-main mb-4">
-					Somos una tienda online 100% colombiana, amantes del deporte como estilo de vida, comprometidos en ofrecer productos y servicios de la mas 
-					alta calidad a los mejores precios del mercado. Estamos convencidos de que nuestros clientes son lo mas importante, son nuestra razón de ser,
-					por ello siempre estamos en mejora continua de nuestros estándares, en la atención y satisfacción al cliente.</p>
+				  Somos una tienda especializada en bicicletas, partes y componentes que nace para dar respuesta a las necesidades de los consumidores y o usuarios de la bicicleta.
+				</p>
 				<!-- //footer first section -->
 				<!-- footer second section -->
 				<div class="row w3l-grids-footer border-top border-bottom py-sm-4 py-3">
@@ -907,7 +832,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</div>
 							<div class="col-8 text-form-footer">
 								<h3>Envio Gratis</h3>
-								<p>En todo Bogota</p>
+								<p>Nivel Nacional</p>
 							</div>
 						</div>
 					</div>
@@ -917,8 +842,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<i class="fas fa-shipping-fast"></i>
 							</div>
 							<div class="col-8 text-form-footer">
-								<h3> Entrega rápida </h3>
-								<p> A nivel nacional </p>
+								<h3>Entregamos en </h3>
+								<p>48/Horas</p>
 							</div>
 						</div>
 					</div>
@@ -928,8 +853,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<i class="far fa-thumbs-up"></i>
 							</div>
 							<div class="col-8 text-form-footer">
-								<h3>Gran selección</h3>
-								<p>de productos</p>
+								<h3>Satisfacción</h3>
+								<p>Garantizada</p>
 							</div>
 						</div>
 					</div>
@@ -943,25 +868,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="row footer-info w3-agileits-info">
 					<!-- footer categories -->
 					<div class="col-md-3 col-sm-6 footer-grids">
-						<h3 class="text-white font-weight-bold mb-3">Categoriass</h3>
+						<h3 class="text-white font-weight-bold mb-3">Productos</h3>
 						<ul>
 							<li class="mb-3">
-								<a href="product.html">Ciclismo </a>
+								<a href="product.html">Bicicletas</a>
 							</li>
 							<li class="mb-3">
-								<a href="product.html">Jugueteria</a>
+								<a href="product.html">Indumentaria</a>
 							</li>
 							<li class="mb-3">
-								<a href="product.html">Equipos de gimnasio</a>
+								<a href="product.html">Grupos</a>
 							</li>
 							<li class="mb-3">
-								<a href="product2.html">Indumentaria</a>
+								<a href="product2.html">Garantía</a>
 							</li>
-							<li class="mb-3">
-								<a href="product.html">Electronica</a>
-							</li>
+					<!---		<li class="mb-3">
+								<a href="product.html"></a>
+							</li>--->
 							<li>
-								<a href="product2.html">Servicio tecnico</a>
+								<a href="product2.html">Servicio Técnico</a>
 							</li>
 						</ul>
 					</div>
@@ -980,7 +905,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<a href="help.html">Ayuda</a>
 							</li>
 							<li class="mb-3">
-								<a href="faqs.html">Faqs</a>
+								<a href="faqs.html">Pqrs</a>
 							</li>
 							<li class="mb-3">
 								<a href="terms.html">Terminos y Condiciones</a>
@@ -996,7 +921,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<li class="mb-3">
 								<i class="fas fa-map-marker"></i> Bogotá DC</li>
 							<li class="mb-3">
-								<i class="fas fa-mobile"></i>(+57) 3043704505 </li>
+								<i class="fas fa-mobile"></i>(+57) 3045703682 </li>
 							<li class="mb-3">
 								<i class="fas fa-phone"></i>(+57) 3135450939</li>
 							<li class="mb-3">
@@ -1011,12 +936,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 					<div class="col-md-3 col-sm-6 footer-grids w3l-agileits mt-md-0 mt-4">
 						<!-- newsletter -->
-						<h3 class="text-white font-weight-bold mb-3">Notificaciones</h3>
-						<p class="mb-3">Envio gratis en su primera orden!</p>
+						<h3 class="text-white font-weight-bold mb-3">Suscríbase Aqui: </h3>
+						<p class="mb-3">Reciba las mejores ofertas y ultimas tendencias.</p>
 						<form action="#" method="post">
 							<div class="form-group">
 								<input type="email" class="form-control" placeholder="Email" name="email" required="">
-								<input type="submit" value="Ir">
+								<input type="submit" value="Enviar">
 							</div>
 						</form>
 						<!-- //newsletter -->
@@ -1273,25 +1198,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<img src="{% static 'images/pay1.png' %}" alt="" class="opc-pago">
 						</li>
 						<li>
-							<img src="images/pay2.png" alt="" class="opc-pago">
+							<img src="{% static 'images/pay2.png' %}" alt="" class="opc-pago">
 						</li>
 						<li>
-							<img src="images/pay4.png" alt="" class="opc-pago">
+							<img src="{% static 'images/pay4.png' %}" alt="" class="opc-pago">
 						</li>
 						<li>
-							<img src="images/pay3.png" alt="" class="opc-pago">
+							<img src="{% static 'images/pay3.png' %}" alt="" class="opc-pago">
 						</li>
 						<li>
-							<img src="images/pay5.png" alt="" class="opc-pago">
+							<img src="{% static 'images/pay5.png' %}" alt="" class="opc-pago">
 						</li>
 						<li>
-							<img src="images/pay7.png" alt="" class="opc-pago">
+							<img src="{% static 'images/pay7.png' %}" alt="" class="opc-pago">
 						</li>
 						<li>
-							<img src="images/pay8.png" alt="" class="opc-pago">
+							<img src="{% static 'images/pay8.png' %}" alt="" class="opc-pago">
 						</li>
 						<li>
-							<img src="images/paypal.png" alt="" class="opc-pago">
+							<img src="{% static 'images/paypal.png' %}" alt="" class="opc-pago">
 						</li>
 					</ul>
 				</div>
@@ -1313,7 +1238,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 	<!-- js-files -->
 	<!-- jquery -->
-	<script src="js/jquery-2.2.3.min.js"></script>
+	<script src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
 	<!-- //jquery -->
 
 	<!-- nav smooth scroll -->
@@ -1334,7 +1259,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- //nav smooth scroll -->
 
 	<!-- popup modal (for location)-->
-	<script src="js/jquery.magnific-popup.js"></script>
+	<script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
 	<script>
 		$(document).ready(function () {
 			$('.popup-with-zoom-anim').magnificPopup({
@@ -1354,7 +1279,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- //popup modal (for location)-->
 
 	<!-- cart-js -->
-	<script src="js/minicart.js"></script>
+	<script src="{% static 'js/minicart.js' %}"></script>
 	<script>
 		paypals.minicarts.render(); //use only unique class names other than paypals.minicarts.Also Replace same class name in css and minicart.min.js
 
@@ -1397,16 +1322,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- //password-script -->
 	
 	<!-- scroll seller -->
-	<script src="js/scroll.js"></script>
+	<script src="{% static 'js/scroll.js' %}"></script>
 	<!-- //scroll seller -->
 
 	<!-- smoothscroll -->
-	<script src="js/SmoothScroll.min.js"></script>
+	<script src="{% static 'js/SmoothScroll.min.js' %}"></script>
 	<!-- //smoothscroll -->
 
 	<!-- start-smooth-scrolling -->
-	<script src="js/move-top.js"></script>
-	<script src="js/easing.js"></script>
+	<script src="{% static 'js/move-top.js' %}"></script>
+	<script src="{% static 'js/easing.js' %}"></script>
 	<script>
 		jQuery(document).ready(function ($) {
 			$(".scroll").click(function (event) {
@@ -1440,9 +1365,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- //smooth-scrolling-of-move-up -->
 
 	<!-- for bootstrap working -->
-	<script src="js/bootstrap.js"></script>
+	<script src="{% static 'js/bootstrap.js' %}"></script>
 	<!-- //for bootstrap working -->
 	<!-- //js-files -->
+	
+	<script>
+	  const links = document.querySelectorAll(".nav-item");
+	  
+	  links.forEach(link => {
+	    link.addEventListener("click", addActive);
+	  })
+	  
+	  function addActive(){
+	    links.forEach(link => {
+	      link.classList.remove("active");
+	      this.classList.add("active");
+	    })
+	  }
+	</script>
 </body>
 
 </html>

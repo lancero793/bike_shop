@@ -9,9 +9,9 @@
 		<div class="container py-xl-4 py-lg-2">
 			<!-- tittle heading -->
 			<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
-				<span>Nue</span>vos
-				<!-- <span>N</span>ew -->
-				<span>Prod</span>uctos</h3>
+				<!---<span>Rueda</span> Libre
+			  <span>Lib</span>re--->
+				<span>Bike Shop</span></h3>
 			<!-- //tittle heading -->
 			<div class="row">
 				<!-- product left -->
@@ -19,24 +19,28 @@
 					<div class="wrapper">
 						<!-- first section -->
 						<div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
-							<h3 class="heading-tittle text-center font-italic">Nuevas Bicicletas</h3>
+							<h3 class="heading-tittle text-center font-italic">Popular esta semana</h3>
 							<div class="row">
+							  {% for product in products %}
 								<div class="col-md-4 product-men mt-5">
-									<div class="men-pro-item simpleCart_shelfItem">
+									<div class="men-pro-item simpleCart_shelfItem mb-5">
 										<div class="men-thumb-item text-center">
-											<img src="{% static 'images/opt1.jpg' %}" alt="">
+											<img src="{{ product.image }}" alt="">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
-													<a href="tucana.html" class="link-product-add-cart">Vista rápida</a>
+													<a href="{% url 'details' product.id %}" class="link-product-add-cart">Vista rápida</a>
 												</div>
 											</div>
+											{% if product.is_offert %}
+													<span class="product-new-top">-25%</span>
+											{% endif %}
 										</div>
 										<div class="item-info-product text-center border-top mt-4">
 											<h4 class="pt-1">
-												<a href="tucana.html">Optimus Tucana (9 Vel)</a>
+												<a href="tucana.html">{{ product.name }}</a>
 											</h4>
 											<div class="info-product-price my-2">
-												<span class="item_price">$1.450.000 </span>
+												<span class="item_price">${{ product.price }} </span>
 												<del>$1.600.000</del>
 											</div>
 											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
@@ -45,8 +49,8 @@
 														<input type="hidden" name="cmd" value="_cart" />
 														<input type="hidden" name="add" value="1" />
 														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="Optimus Tucana (9 Vel)" />
-														<input type="hidden" name="amount" value="1450000" />
+														<input type="hidden" name="item_name" value="{{ product.name }}" />
+														<input type="hidden" name="amount" value="{{ product.price }}" />
 														<input type="hidden" name="discount_amount" value="0" />
 														<input type="hidden" name="currency_code" value="COP" />
 														<input type="hidden" name="return" value=" " />
@@ -58,12 +62,13 @@
 										</div>
 									</div>
 								</div>
+								{% endfor %}
 							</div>
 						</div>
 						<!-- //first section -->
 						<!-- second section -->
 						<div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
-							<h3 class="heading-tittle text-center font-italic">Autos y Motos</h3>
+							<h3 class="heading-tittle text-center font-italic">Productos en promoción</h3>
 							<div class="row">
 								<div class="col-md-4 product-men mt-5">
 									<div class="men-pro-item simpleCart_shelfItem">
@@ -109,8 +114,8 @@
 						<!-- third section -->
 						<div class="product-sec1 product-sec2 px-sm-5 px-3">
 							<div class="row">
-								<h3 class="col-md-4 effect-bg">#quedate en casa</h3>
-								<p class="w3l-nut-middle">Evita el Covid19</p>
+								<h3 class="col-md-4 effect-bg">#RuedaLibre</h3>
+								<p class="w3l-nut-middle">#NoRules</p>
 								<div class="col-md-8 bg-right-nut">
 									<img src="images/image1.svg" alt="">
 								</div>
@@ -119,7 +124,7 @@
 						<!-- //third section -->
 						<!-- fourth section -->
 						<div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mt-4">
-							<h3 class="heading-tittle text-center font-italic">Equipos de gimnasio</h3>
+							<h3 class="heading-tittle text-center font-italic">Recomendado para ti</h3>
 							<div class="row">
 								<div class="col-md-4 product-men mt-5">
 									<div class="men-pro-item simpleCart_shelfItem">
@@ -131,7 +136,7 @@
 												</div>
 											</div>
 										</div>
-										<span class="product-new-top">Agotado</span>
+										<span class="product-new-top">Stock</span>
 										<div class="item-info-product text-center border-top mt-4">
 											<h4 class="pt-1">
 												<a href="single.html">Eliptica SportFitness (Con Ventilador)</a>
@@ -206,38 +211,38 @@
 						<!-- //price -->
 						<!-- discounts -->
 						<div class="left-side border-bottom py-2">
-							<h3 class="agileits-sear-head mb-3">Descuento</h3>
+							<h3 class="agileits-sear-head mb-3">Producto</h3>
 							<ul>
 								<li>
 									<input type="checkbox" class="checked">
-									<span class="span">5% O Mas</span>
+									<span class="span">Pastillas Freno</span>
 								</li>
 								<li>
 									<input type="checkbox" class="checked">
-									<span class="span">10% O Mas</span>
+									<span class="span">Rodamientos</span>
 								</li>
 								<li>
 									<input type="checkbox" class="checked">
-									<span class="span">15% O Mas</span>
+									<span class="span">Kit Purga</span>
 								</li>
 								<li>
 									<input type="checkbox" class="checked">
-									<span class="span">20% O Mas</span>
+									<span class="span">Neumáticos</span>
 								</li>
 								<li>
 									<input type="checkbox" class="checked">
-									<span class="span">25% O Mas</span>
+									<span class="span">Corazas</span>
 								</li>
 								<li>
 									<input type="checkbox" class="checked">
-									<span class="span">30% O Mas</span>
+									<span class="span">Mangos</span>
 								</li>
 							</ul>
 						</div>
 						<!-- //discounts -->
 						<!-- reviews -->
 						<div class="customer-rev border-bottom left-side py-2">
-							<h3 class="agileits-sear-head mb-3">Mejores Productos</h3>
+							<h3 class="agileits-sear-head mb-3">Puntuación</h3>
 							<ul>
 								<li>
 									<a href="#">
@@ -296,22 +301,6 @@
 								</li>
 								<li>
 									<input type="checkbox" class="checked">
-									<span class="span">Jugueteria</span>
-								</li>
-								<li>
-									<input type="checkbox" class="checked">
-									<span class="span">Carros</span>
-								</li>
-								<li>
-									<input type="checkbox" class="checked">
-									<span class="span">Motos</span>
-								</li>
-								<li>
-									<input type="checkbox" class="checked">
-									<span class="span">Equipos de Gimnasio</span>
-								</li>
-								<li>
-									<input type="checkbox" class="checked">
 									<span class="span">Electronica</span>
 								</li>
 								<li>
@@ -339,7 +328,7 @@
 						<!-- //electronics -->
 						<!-- delivery -->
 						<div class="left-side border-bottom py-2">
-							<h3 class="agileits-sear-head mb-3">Opciones de pago</h3>
+							<h3 class="agileits-sear-head mb-3">Opciones de entrega</h3>
 							<ul>
 								<li>
 									<input type="checkbox" class="checked">
@@ -347,11 +336,11 @@
 								</li>
 								<li>
 									<input type="checkbox" class="checked">
-									<span class="span">Pago contraEntrega</span>
+									<span class="span">Pago contraentrega</span>
 								</li>
 								<li>
 									<input type="checkbox" class="checked">
-									<span class="span">Entrega Rapida</span>
+									<span class="span">Cambiar dirección de envio</span>
 								</li>
 							</ul>
 						</div>
@@ -373,7 +362,7 @@
 						<!-- //arrivals -->
 						<!-- best seller -->
 						<div class="f-grid py-2">
-							<h3 class="agileits-sear-head mb-3">Mas Vendidos</h3>
+							<h3 class="agileits-sear-head mb-3">Más Vendidos</h3>
 							<div class="box-scroll">
 								<div class="scroll">
 									<div class="row">
@@ -423,12 +412,12 @@
 					<div class="join-agile text-left p-4">
 						<div class="row">
 							<div class="col-sm-7 offer-name">
-								<h6>Todo en Bicicletas</h6>
-								<h4 class="mt-2 mb-3">La mejor calidad</h4>
+								<h6>Bicicletas</h6>
+								<h4 class="mt-2 mb-3">Scoot</h4>
 								<p>Los mejores precios del mercado</p>
 							</div>
 							<div class="col-sm-5 offerimg-w3l oferta">
-								<img src="images/off1.png" alt="" class="img-fluid">
+								<img src=" {% static 'images/off1.png' %}" alt="" class="img-fluid">
 							</div>
 						</div>
 					</div>
@@ -437,12 +426,12 @@
 					<div class="join-agile text-left p-4">
 						<div class="row ">
 							<div class="col-sm-7 offer-name">
-								<h6>Los mejores Componentes</h6>
-								<h4 class="mt-2 mb-3">Para su Bicicleta</h4>
-								<p>Descuentos hasta del 15%</p>
+								<h6>Los mejores</h6>
+								<h4 class="mt-2 mb-3">Componentes</h4>
+								<p>Con descuentos especiales</p>
 							</div>
 							<div class="col-sm-5 offerimg-w3l oferta">
-								<img src="images/off2.png" alt="" class="img-fluid">
+								<img src="{% static 'images/off2.png' %}" alt="" class="img-fluid">
 							</div>
 						</div>
 					</div>
