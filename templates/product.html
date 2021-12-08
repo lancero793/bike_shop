@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block tittle %} Moto FreeStyle || Rueda Libre {% endblock %}
+{% block tittle %} {{ product.name }} || Rueda Libre {% endblock %}
 {% load static %}
 {% block infoProduc %}
 	<!-- //banner-2 -->
@@ -9,10 +9,10 @@
 			<div class="container">
 				<ul class="w3_short">
 					<li>
-						<a href="index.html">Inicio</a>
+						<a href="{% url 'home' %}">Inicio</a>
 						<i>|</i>
 					</li>
-					<li>Moto Freestyle</li>
+					<li>{{ product.name}}</li>
 				</ul>
 			</div>
 		</div>
@@ -24,8 +24,7 @@
 		<div class="container py-xl-4 py-lg-2">
 			<!-- tittle heading -->
 			<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
-				<span>M</span>oto
-				<span>F</span>reestyle
+				<span>{{ product.name }}</span>
 			</h3>
 			<!-- //tittle heading -->
 			<div class="row">
@@ -39,7 +38,7 @@
 								</li>
 								<li data-thumb="{% static 'images/si2.jpg' %}">
 									<div class="thumb-image">
-										<img src="{% static 'images/si2.jpg' %}" data-imagezoom="true" class="img-fluid" alt=""> </div>
+										<img src="{{ product.image}}" data-imagezoom="true" class="img-fluid" alt=""> </div>
 								</li>
 								<li data-thumb="{% static 'images/bg1.jpg' %}">
 									<div class="thumb-image">
@@ -52,9 +51,9 @@
 				</div>
 
 				<div class="col-lg-7 single-right-left simpleCart_shelfItem">
-					<h3 class="mb-3">Moto Freestyle (Recargable)</h3>
+					<h3 class="mb-3">{{ product.name }}</h3>
 					<p class="mb-3">
-						<span class="item_price">$360.000</span>
+						<span class="item_price">${{ product.price }}</span>
 						<del class="mx-2 font-weight-light">$450.000</del>
 						<label>Envio Gratis</label>
 					</p>
@@ -103,8 +102,8 @@
 									<input type="hidden" name="cmd" value="_cart" />
 									<input type="hidden" name="add" value="1" />
 									<input type="hidden" name="business" value=" " />
-									<input type="hidden" name="item_name" value="Moto Freestyle" />
-									<input type="hidden" name="amount" value="360000" />
+									<input type="hidden" name="item_name" value="{{ product.name }}" />
+									<input type="hidden" name="amount" value="{{ product.price }}" />
 									<input type="hidden" name="discount_amount" value="0" />
 									<input type="hidden" name="currency_code" value="COP" />
 									<input type="hidden" name="return" value=" " />
