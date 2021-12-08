@@ -28,7 +28,7 @@
 											<img src="{{ product.image }}" alt="">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
-													<a href="{% url 'details' product.id %}" class="link-product-add-cart">Vista rápida</a>
+													<a href="{% url 'info-product' product.id %}" class="link-product-add-cart">Vista rápida</a>
 												</div>
 											</div>
 											{% if product.is_offert %}
@@ -70,23 +70,27 @@
 						<div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
 							<h3 class="heading-tittle text-center font-italic">Productos en promoción</h3>
 							<div class="row">
+							  {% for product in products %}
+							  {% if product.is_offert %}
 								<div class="col-md-4 product-men mt-5">
 									<div class="men-pro-item simpleCart_shelfItem">
 										<div class="men-thumb-item text-center">
-											<img src="images/m4.jpg" alt="">
+											<img src="{{ product.image }}" alt="">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
-													<a href="{% url 'home' %}" class="link-product-add-cart">Vista rápida</a>
+													<a href="{% url 'info-product' product.id %}" class="link-product-add-cart">Vista rápida</a>
 												</div>
 											</div>
-											<span class="product-new-top">Nuevo</span>
+											{% if product.is_offert %}
+											<span class="product-new-top">-25%</span>
+											{% endif %}
 										</div>
 										<div class="item-info-product text-center border-top mt-4">
 											<h4 class="pt-1">
-												<a href="ford-ranger.html">Ford Ranger(4 Motores)</a>
+												<a href="ford-ranger.html">{{ producto.name }}</a>
 											</h4>
 											<div class="info-product-price my-2">
-												<span class="item_price">$1.850.000</span>
+												<span class="item_price">${{ product.price }}</span>
 												<del>$2.000.000</del>
 											</div>
 											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
@@ -95,8 +99,8 @@
 														<input type="hidden" name="cmd" value="_cart" />
 														<input type="hidden" name="add" value="1" />
 														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="Ford Ranger (4 Motores)" />
-														<input type="hidden" name="amount" value="1850000" />
+														<input type="hidden" name="item_name" value="{{ product.name }}" />
+														<input type="hidden" name="amount" value="{{ product.price }}" />
 														<input type="hidden" name="discount_amount" value="0" />
 														<input type="hidden" name="currency_code" value="COP" />
 														<input type="hidden" name="return" value=" " />
@@ -108,6 +112,8 @@
 										</div>
 									</div>
 								</div>
+								{% endif %}
+								{% endfor %}
 							</div>
 						</div>
 						<!-- //second section -->
@@ -117,7 +123,7 @@
 								<h3 class="col-md-4 effect-bg">#RuedaLibre</h3>
 								<p class="w3l-nut-middle">#NoRules</p>
 								<div class="col-md-8 bg-right-nut">
-									<img src="images/image1.svg" alt="">
+									<img src="{% static 'images/bgd.jpg' %}" alt="">
 								</div>
 							</div>
 						</div>
