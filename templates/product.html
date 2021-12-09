@@ -33,17 +33,17 @@
 					<div class="grid images_3_of_2">
 						<div class="flexslider">
 							<ul class="slides">
-								<li data-thumb="{% static 'images/si1.jpg' %}">
+								<li data-thumb=" {{ product.image }}">
 									<div class="thumb-image">
-										<img src="{% static 'images/si1.jpg' %}" data-imagezoom="true" class="img-fluid" alt=""> </div>
+										<img src=" {{ product.image }}" data-imagezoom="true" class="img-fluid" alt=""> </div>
 								</li>
-								<li data-thumb="{% static 'images/si2.jpg' %}">
+								<li data-thumb=" {{ product.image_one }}">
 									<div class="thumb-image">
-										<img src="{{ product.image}}" data-imagezoom="true" class="img-fluid" alt=""> </div>
+										<img src="{{ product.image_one }}" data-imagezoom="true" class="img-fluid" alt=""> </div>
 								</li>
-								<li data-thumb="{% static 'images/bg1.jpg' %}">
+								<li data-thumb=" {{ product.image_two }}">
 									<div class="thumb-image">
-										<img src="{% static 'images/bg1.jpg' %}" data-imagezoom="true" class="img-fluid" alt=""> </div>
+										<img src="{{ product.image_two }}" data-imagezoom="true" class="img-fluid" alt=""> </div>
 								</li>
 							</ul>
 							<div class="clearfix"></div>
@@ -74,27 +74,46 @@
 					<div class="product-single-w3l">
 						<p class="my-3">
 							<i class="far fa-hand-point-right mr-2"></i>
-							<label>(3 Meses)</label>Garantia Bateria + Cargador</p>
+							{% if product.warranty %}
+							<label>(Garantía: {{ product.duration_warranty}}) </label>
+							  {% else %}
+							    <label>No aplica garantía</label>
+							{% endif %}
+							</p>
 						<ul>
-							<li class="mb-1">
-								Bateria | 6V | 7AH
+						  <li class="mb-1">
+							  Código | {{ product.reference_code}}
 							</li>
 							<li class="mb-1">
-								Luz Frontal
+								Materiales | {{product.material}} | 
 							</li>
 							<li class="mb-1">
-								Caja Musical
+								Tallas | {{ product.size}} |
 							</li>
 							<li class="mb-1">
-								Bateria | 1500 mAh
+								Colores | {{ product.color }} |
 							</li>
-							<!-- <li class="mb-1">
-								Exynos 7870 Octa Core 1.6GHz Processor
-							</li> -->
+							<li class="mb-1">
+								Beneficios | ({{product.description }})
+							</li>
+							<li class="mb-1">
+								Peso | {{product.peso}}G |
+							</li> 
+							<li class="mb-1">
+								Categoría | {{product.category}} |
+							</li>
+							<li class="mb-1">
+								Stock | {{product.stock}} |
+							</li>
 						</ul>
 						<p class="my-sm-4 my-3">
-							<i class="fas fa-retweet mr-3"></i>Compra sin salir de casa.
+							<i class="fas fa-retweet mr-3"></i>Cumple sus expectativas, o | Se la cambiamos
 						</p>
+						<ul>
+						  <li class="mb-2">
+						    Disclaimer | Aplican TyC
+						  </li>
+						</ul>
 					</div>
 					<div class="occasion-cart">
 						<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
