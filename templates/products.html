@@ -20,13 +20,14 @@
 						<!-- first section -->
 						<div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
 							<div class="row">
+							  {% for product in products %} 
 								<div class="col-md-4 product-men mt-md-0 mt-5">
 									<div class="men-pro-item simpleCart_shelfItem">
 										<div class="men-thumb-item text-center">
-											<img src="images/sii1.jpg" alt="">
+											<img src="{{ product.image }}" alt="">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
-													<a href="{% url 'product' %}" class="link-product-add-cart">Vista rápida</a>
+													<a href="{% url 'info-product' product.id %}" class="link-product-add-cart">Vista rápida</a>
 												</div>
 											</div>
 											<span class="product-new-top">Nuevo</span>
@@ -34,10 +35,10 @@
 										</div>
 										<div class="item-info-product text-center border-top mt-4">
 											<h4 class="pt-1">
-												<a href="mercedes.html">Mercedes(Pantalla Tactil)</a>
+												<a href="mercedes.html">{{ product.name }}</a>
 											</h4>
 											<div class="info-product-price my-2">
-												<span class="item_price">$1.430.000</span>
+												<span class="item_price">${{ product.price }}</span>
 												<del>$1.670.000</del>
 											</div>
 											<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
@@ -46,8 +47,8 @@
 														<input type="hidden" name="cmd" value="_cart" />
 														<input type="hidden" name="add" value="1" />
 														<input type="hidden" name="business" value=" " />
-														<input type="hidden" name="item_name" value="Mercedes Benz (Pantalla Tactil)" />
-														<input type="hidden" name="amount" value="1430000" />
+														<input type="hidden" name="item_name" value="{{ product.name }}" />
+														<input type="hidden" name="amount" value="{{ product.price }}" />
 														<input type="hidden" name="discount_amount" value="0" />
 														<input type="hidden" name="currency_code" value="COP" />
 														<input type="hidden" name="return" value=" " />
@@ -60,12 +61,14 @@
 										</div>
 									</div>
 								</div>
+								{% endfor %}
 							</div>
 						</div>
 						<!-- //first section -->
 						<!-- second section -->
 						<div class="product-sec1 px-sm-4 px-3 py-sm-5  py-3 mb-4">
 							<div class="row">
+							  {% for p in products %}
 								<div class="col-md-4 product-men">
 									<div class="men-pro-item simpleCart_shelfItem">
 										<div class="men-thumb-item text-center">
@@ -106,6 +109,7 @@
 									</div>
 								</div>
 							</div>
+							  {% endfor %}
 						</div>
 						<!-- //second section -->
 						<!-- 3rd section -->
@@ -408,4 +412,4 @@
 		</div>
 	</div>
 	<!-- //top products -->
-{% endblock%}
+{% endblock %}

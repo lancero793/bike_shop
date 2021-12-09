@@ -605,9 +605,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<form action="#" method="post">
 						<select id="agileinfo-nav_search" name="agileinfo_search" class="border" required="">
 							<option value="">Todas las categorias</option>
-							<option value="Televisions">Bicicletas</option>
+							<option value="TelTelevision">Bicicletas</option>
 							<option value="Headphones">Componentes</option>
-							<option value="Computers">Jugueteria</option>
+							<option  value="Computers">Jugueteria</option>
 							<option value="Appliances">Indumentaria</option>
 							<option value="Mobiles">Baterias</option>
 							<option value="Fruits &amp; Vegetables">Electronica &amp; y Mas</option>
@@ -729,86 +729,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<!-- //navigation -->
 
-	<!-- banner -->
-	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-		<!-- Indicators-->
-		<ol class="carousel-indicators">
-			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-			<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-		</ol>
-		<div class="carousel-inner">
-			<div class="carousel-item item1 active">
-				<div class="container">
-					<div class="w3l-space-banner">
-						<div class="carousel-caption p-lg-5 p-sm-4 p-3">
-							<p>DESCUENTO
-								<span>5%</span> Todos los</p>
-							<h3 class="font-weight-bold pt-2 pb-lg-5 pb-4">Pedidos
-								<span>TIENDA</span>
-								ONLINE
-							</h3>
-							<a class="button2" href="product.html">Comprar Ahora </a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="carousel-item item2">
-				<div class="container">
-					<div class="w3l-space-banner">
-						<div class="carousel-caption p-lg-5 p-sm-4 p-3">
-							<p>Lo que buscas
-								<span>Lo consigues</span> en
-              </p>
-							<h3 class="font-weight-bold pt-2 pb-lg-5 pb-4">#Rueda
-								<span>Libre</span>
-							</h3>
-							<a class="button2" href="product.html">Comprar Ahora </a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="carousel-item item3">
-				<div class="container">
-					<div class="w3l-space-banner">
-						<div class="carousel-caption p-lg-5 p-sm-4 p-3">
-							<p>Paga
-								<span>Cuando recibas</span> Disponible</p>
-							<h3 class="font-weight-bold pt-2 pb-lg-5 pb-4">En
-								<span>(Bogotá)</span>
-							</h3>
-							<a class="button2" href="product.html">Comprar Ahora </a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="carousel-item item4">
-				<div class="container">
-					<div class="w3l-space-banner">
-						<div class="carousel-caption p-lg-5 p-sm-4 p-3">
-							<p>Nos apasiona el
-								<span>Ciclismo</span> </p>
-							<h3 class="font-weight-bold pt-2 pb-lg-5 pb-4">Tanto 
-								<span>Como a ti.</span>
-							</h3>
-							<a class="button2" href="{% url 'products' %}">Comprar Ahora </a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			<span class="sr-only">Anterior</span>
-		</a>
-		<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-			<span class="sr-only">Siguiente</span>
-		</a>
-	</div>
-	<!-- //banner -->
-
+    {% block slide %}
+      {% include "slide.html" %}
+    {% endblock %}
     {% block products %} {% endblock %}
     {% block contact %} {% endblock %}
     {% block about %} {% endblock %}
@@ -1229,7 +1152,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- copyright -->
 	<div class="copy-right py-3">
 		<div class="container">
-			<p class="text-center text-white">©2021 RuedaLibre. Todos Los Derechos Reservados || Desarrollado por
+			<p class="text-center text-white">©2021 Rueda Libre. Todos Los Derechos Reservados || Desarrollado por
 				<a href="https://www.xer.com.co" target="_blank" title="Visitar página"> xer technologies.</a>
 			</p>
 		</div>

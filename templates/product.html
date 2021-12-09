@@ -1,6 +1,7 @@
 {% extends "base.html" %}
-{% block tittle %} Moto FreeStyle || Rueda Libre {% endblock %}
+{% block tittle %} {{ product.name }} || Rueda Libre {% endblock %}
 {% load static %}
+{% block slide %} {% endblock %}
 {% block infoProduc %}
 	<!-- //banner-2 -->
 	<!-- page -->
@@ -9,10 +10,10 @@
 			<div class="container">
 				<ul class="w3_short">
 					<li>
-						<a href="index.html">Inicio</a>
+						<a href="{% url 'home' %}">Inicio</a>
 						<i>|</i>
 					</li>
-					<li>Moto Freestyle</li>
+					<li>{{ product.name}}</li>
 				</ul>
 			</div>
 		</div>
@@ -24,8 +25,7 @@
 		<div class="container py-xl-4 py-lg-2">
 			<!-- tittle heading -->
 			<h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">
-				<span>M</span>oto
-				<span>F</span>reestyle
+				<span>{{ product.name }}</span>
 			</h3>
 			<!-- //tittle heading -->
 			<div class="row">
@@ -33,17 +33,17 @@
 					<div class="grid images_3_of_2">
 						<div class="flexslider">
 							<ul class="slides">
-								<li data-thumb="{% static 'images/si1.jpg' %}">
+								<li data-thumb=" {{ product.image }}">
 									<div class="thumb-image">
-										<img src="{% static 'images/si1.jpg' %}" data-imagezoom="true" class="img-fluid" alt=""> </div>
+										<img src=" {{ product.image }}" data-imagezoom="true" class="img-fluid" alt=""> </div>
 								</li>
-								<li data-thumb="{% static 'images/si2.jpg' %}">
+								<li data-thumb=" {{ product.image_one }}">
 									<div class="thumb-image">
-										<img src="{% static 'images/si2.jpg' %}" data-imagezoom="true" class="img-fluid" alt=""> </div>
+										<img src="{{ product.image_one }}" data-imagezoom="true" class="img-fluid" alt=""> </div>
 								</li>
-								<li data-thumb="{% static 'images/bg1.jpg' %}">
+								<li data-thumb=" {{ product.image_two }}">
 									<div class="thumb-image">
-										<img src="{% static 'images/bg1.jpg' %}" data-imagezoom="true" class="img-fluid" alt=""> </div>
+										<img src="{{ product.image_two }}" data-imagezoom="true" class="img-fluid" alt=""> </div>
 								</li>
 							</ul>
 							<div class="clearfix"></div>
@@ -52,9 +52,9 @@
 				</div>
 
 				<div class="col-lg-7 single-right-left simpleCart_shelfItem">
-					<h3 class="mb-3">Moto Freestyle (Recargable)</h3>
+					<h3 class="mb-3">{{ product.name }}</h3>
 					<p class="mb-3">
-						<span class="item_price">$360.000</span>
+						<span class="item_price">${{ product.price }}</span>
 						<del class="mx-2 font-weight-light">$450.000</del>
 						<label>Envio Gratis</label>
 					</p>
@@ -74,27 +74,46 @@
 					<div class="product-single-w3l">
 						<p class="my-3">
 							<i class="far fa-hand-point-right mr-2"></i>
-							<label>(3 Meses)</label>Garantia Bateria + Cargador</p>
+							{% if product.warranty %}
+							<label>(Garantía: {{ product.duration_warranty}}) </label>
+							  {% else %}
+							    <label>No aplica garantía</label>
+							{% endif %}
+							</p>
 						<ul>
-							<li class="mb-1">
-								Bateria | 6V | 7AH
+						  <li class="mb-1">
+							  Código | {{ product.reference_code}}
 							</li>
 							<li class="mb-1">
-								Luz Frontal
+								Materiales | {{product.material}} | 
 							</li>
 							<li class="mb-1">
-								Caja Musical
+								Tallas | {{ product.size}} |
 							</li>
 							<li class="mb-1">
-								Bateria | 1500 mAh
+								Colores | {{ product.color }} |
 							</li>
-							<!-- <li class="mb-1">
-								Exynos 7870 Octa Core 1.6GHz Processor
-							</li> -->
+							<li class="mb-1">
+								Beneficios | ({{product.description }})
+							</li>
+							<li class="mb-1">
+								Peso | {{product.peso}}G |
+							</li> 
+							<li class="mb-1">
+								Categoría | {{product.category}} |
+							</li>
+							<li class="mb-1">
+								Stock | {{product.stock}} |
+							</li>
 						</ul>
 						<p class="my-sm-4 my-3">
-							<i class="fas fa-retweet mr-3"></i>Compra sin salir de casa.
+							<i class="fas fa-retweet mr-3"></i>Cumple sus expectativas, o | Se la cambiamos
 						</p>
+						<ul>
+						  <li class="mb-2">
+						    Disclaimer | Aplican TyC
+						  </li>
+						</ul>
 					</div>
 					<div class="occasion-cart">
 						<div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
@@ -103,8 +122,8 @@
 									<input type="hidden" name="cmd" value="_cart" />
 									<input type="hidden" name="add" value="1" />
 									<input type="hidden" name="business" value=" " />
-									<input type="hidden" name="item_name" value="Moto Freestyle" />
-									<input type="hidden" name="amount" value="360000" />
+									<input type="hidden" name="item_name" value="{{ product.name }}" />
+									<input type="hidden" name="amount" value="{{ product.price }}" />
 									<input type="hidden" name="discount_amount" value="0" />
 									<input type="hidden" name="currency_code" value="COP" />
 									<input type="hidden" name="return" value=" " />
